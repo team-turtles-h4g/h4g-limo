@@ -1,0 +1,958 @@
+[
+    {
+        "viewValue": "NO CHEMICALS RECORDED",
+        "value": ""
+    },
+    {
+        "viewValue": "chlorofyl-a",
+        "value": "chlorofyl-a"
+    },
+    {
+        "viewValue": "acenafteen",
+        "value": "acenafteen"
+    },
+    {
+        "viewValue": "acenaftyleen",
+        "value": "acenaftyleen"
+    },
+    {
+        "viewValue": "ammoniak",
+        "value": "ammoniak"
+    },
+    {
+        "viewValue": "ammonium",
+        "value": "ammonium"
+    },
+    {
+        "viewValue": "antraceen",
+        "value": "antraceen"
+    },
+    {
+        "viewValue": "benzo(a)antraceen",
+        "value": "benzo(a)antraceen"
+    },
+    {
+        "viewValue": "benzo(a)pyreen",
+        "value": "benzo(a)pyreen"
+    },
+    {
+        "viewValue": "benzo(b)fluorantheen",
+        "value": "benzo(b)fluorantheen"
+    },
+    {
+        "viewValue": "benzo(ghi)peryleen",
+        "value": "benzo(ghi)peryleen"
+    },
+    {
+        "viewValue": "benzo(k)fluorantheen",
+        "value": "benzo(k)fluorantheen"
+    },
+    {
+        "viewValue": "Biochemisch zuurstofverbruik over 5 dagen",
+        "value": "Biochemisch zuurstofverbruik over 5 dagen"
+    },
+    {
+        "viewValue": "cadmium",
+        "value": "cadmium"
+    },
+    {
+        "viewValue": "chloride",
+        "value": "chloride"
+    },
+    {
+        "viewValue": "chroom",
+        "value": "chroom"
+    },
+    {
+        "viewValue": "chryseen",
+        "value": "chryseen"
+    },
+    {
+        "viewValue": "dibenzo(a,h)antraceen",
+        "value": "dibenzo(a,h)antraceen"
+    },
+    {
+        "viewValue": "fenantreen",
+        "value": "fenantreen"
+    },
+    {
+        "viewValue": "fluorantheen",
+        "value": "fluorantheen"
+    },
+    {
+        "viewValue": "fluoreen",
+        "value": "fluoreen"
+    },
+    {
+        "viewValue": "fosfaat",
+        "value": "fosfaat"
+    },
+    {
+        "viewValue": "fosfor totaal",
+        "value": "fosfor totaal"
+    },
+    {
+        "viewValue": "indeno(1,2,3-cd)pyreen",
+        "value": "indeno(1,2,3-cd)pyreen"
+    },
+    {
+        "viewValue": "koolstof organisch",
+        "value": "koolstof organisch"
+    },
+    {
+        "viewValue": "koper",
+        "value": "koper"
+    },
+    {
+        "viewValue": "lood",
+        "value": "lood"
+    },
+    {
+        "viewValue": "naftaleen",
+        "value": "naftaleen"
+    },
+    {
+        "viewValue": "nikkel",
+        "value": "nikkel"
+    },
+    {
+        "viewValue": "nitraat",
+        "value": "nitraat"
+    },
+    {
+        "viewValue": "nitriet",
+        "value": "nitriet"
+    },
+    {
+        "viewValue": "pyreen",
+        "value": "pyreen"
+    },
+    {
+        "viewValue": "som 10 polycyclische aromatische koolwaterstoffen (VROM)",
+        "value": "som 10 polycyclische aromatische koolwaterstoffen (VROM)"
+    },
+    {
+        "viewValue": "som 16 polycyclische aromatische koolwaterstoffen (EPA)",
+        "value": "som 16 polycyclische aromatische koolwaterstoffen (EPA)"
+    },
+    {
+        "viewValue": "som nitraat en nitriet",
+        "value": "som nitraat en nitriet"
+    },
+    {
+        "viewValue": "stikstof Kjeldahl",
+        "value": "stikstof Kjeldahl"
+    },
+    {
+        "viewValue": "stikstof totaal",
+        "value": "stikstof totaal"
+    },
+    {
+        "viewValue": "sulfaat",
+        "value": "sulfaat"
+    },
+    {
+        "viewValue": "waterstofcarbonaat",
+        "value": "waterstofcarbonaat"
+    },
+    {
+        "viewValue": "zink",
+        "value": "zink"
+    },
+    {
+        "viewValue": "zuurstof",
+        "value": "zuurstof"
+    },
+    {
+        "viewValue": "Onopgeloste stoffen",
+        "value": "Onopgeloste stoffen"
+    },
+    {
+        "viewValue": "1,2,4-trichloorbenzeen",
+        "value": "1,2,4-trichloorbenzeen"
+    },
+    {
+        "viewValue": "2,6-dichloorbenzamide",
+        "value": "2,6-dichloorbenzamide"
+    },
+    {
+        "viewValue": "4-dimethylaminosulfotoluidide",
+        "value": "4-dimethylaminosulfotoluidide"
+    },
+    {
+        "viewValue": "4-nonylfenol",
+        "value": "4-nonylfenol"
+    },
+    {
+        "viewValue": "4-tertiair-octylfenol",
+        "value": "4-tertiair-octylfenol"
+    },
+    {
+        "viewValue": "abamectine",
+        "value": "abamectine"
+    },
+    {
+        "viewValue": "acetamiprid",
+        "value": "acetamiprid"
+    },
+    {
+        "viewValue": "aclonifen",
+        "value": "aclonifen"
+    },
+    {
+        "viewValue": "alachloor",
+        "value": "alachloor"
+    },
+    {
+        "viewValue": "aldicarb",
+        "value": "aldicarb"
+    },
+    {
+        "viewValue": "aldicarbsulfon",
+        "value": "aldicarbsulfon"
+    },
+    {
+        "viewValue": "ametoctradin",
+        "value": "ametoctradin"
+    },
+    {
+        "viewValue": "amidosulfuron",
+        "value": "amidosulfuron"
+    },
+    {
+        "viewValue": "atrazine",
+        "value": "atrazine"
+    },
+    {
+        "viewValue": "azaconazool",
+        "value": "azaconazool"
+    },
+    {
+        "viewValue": "azoxystrobin",
+        "value": "azoxystrobin"
+    },
+    {
+        "viewValue": "bifenazaat",
+        "value": "bifenazaat"
+    },
+    {
+        "viewValue": "bifenox",
+        "value": "bifenox"
+    },
+    {
+        "viewValue": "bitertanol",
+        "value": "bitertanol"
+    },
+    {
+        "viewValue": "boscalid",
+        "value": "boscalid"
+    },
+    {
+        "viewValue": "bupirimaat",
+        "value": "bupirimaat"
+    },
+    {
+        "viewValue": "buprofezin",
+        "value": "buprofezin"
+    },
+    {
+        "viewValue": "carbaryl",
+        "value": "carbaryl"
+    },
+    {
+        "viewValue": "carbendazim",
+        "value": "carbendazim"
+    },
+    {
+        "viewValue": "carbofuran",
+        "value": "carbofuran"
+    },
+    {
+        "viewValue": "carfentrazon-ethyl",
+        "value": "carfentrazon-ethyl"
+    },
+    {
+        "viewValue": "chloorfenvinfos",
+        "value": "chloorfenvinfos"
+    },
+    {
+        "viewValue": "chloorprofam",
+        "value": "chloorprofam"
+    },
+    {
+        "viewValue": "chloorthalonil",
+        "value": "chloorthalonil"
+    },
+    {
+        "viewValue": "chloortoluron",
+        "value": "chloortoluron"
+    },
+    {
+        "viewValue": "chlorantraniliprole",
+        "value": "chlorantraniliprole"
+    },
+    {
+        "viewValue": "chloridazon",
+        "value": "chloridazon"
+    },
+    {
+        "viewValue": "cis-pyrifenox",
+        "value": "cis-pyrifenox"
+    },
+    {
+        "viewValue": "clomazon",
+        "value": "clomazon"
+    },
+    {
+        "viewValue": "clopyralid",
+        "value": "clopyralid"
+    },
+    {
+        "viewValue": "cyazofamide",
+        "value": "cyazofamide"
+    },
+    {
+        "viewValue": "cycloxydim",
+        "value": "cycloxydim"
+    },
+    {
+        "viewValue": "cymoxanil",
+        "value": "cymoxanil"
+    },
+    {
+        "viewValue": "cypermethrin",
+        "value": "cypermethrin"
+    },
+    {
+        "viewValue": "cyproconazool",
+        "value": "cyproconazool"
+    },
+    {
+        "viewValue": "cyprodinil",
+        "value": "cyprodinil"
+    },
+    {
+        "viewValue": "cyromazine",
+        "value": "cyromazine"
+    },
+    {
+        "viewValue": "daminozide",
+        "value": "daminozide"
+    },
+    {
+        "viewValue": "deltamethrin",
+        "value": "deltamethrin"
+    },
+    {
+        "viewValue": "demeton-S-methyl",
+        "value": "demeton-S-methyl"
+    },
+    {
+        "viewValue": "desethylatrazine",
+        "value": "desethylatrazine"
+    },
+    {
+        "viewValue": "desethylterbutylazine",
+        "value": "desethylterbutylazine"
+    },
+    {
+        "viewValue": "desmetryn",
+        "value": "desmetryn"
+    },
+    {
+        "viewValue": "diazinon",
+        "value": "diazinon"
+    },
+    {
+        "viewValue": "dichlobenil",
+        "value": "dichlobenil"
+    },
+    {
+        "viewValue": "dichlofluanide",
+        "value": "dichlofluanide"
+    },
+    {
+        "viewValue": "dichloorvos",
+        "value": "dichloorvos"
+    },
+    {
+        "viewValue": "diethofencarb",
+        "value": "diethofencarb"
+    },
+    {
+        "viewValue": "diethyltoluamide",
+        "value": "diethyltoluamide"
+    },
+    {
+        "viewValue": "difenoconazool",
+        "value": "difenoconazool"
+    },
+    {
+        "viewValue": "diflubenzuron",
+        "value": "diflubenzuron"
+    },
+    {
+        "viewValue": "diflufenican",
+        "value": "diflufenican"
+    },
+    {
+        "viewValue": "dimethenamide",
+        "value": "dimethenamide"
+    },
+    {
+        "viewValue": "dimethoaat",
+        "value": "dimethoaat"
+    },
+    {
+        "viewValue": "dimethomorf",
+        "value": "dimethomorf"
+    },
+    {
+        "viewValue": "disulfoton",
+        "value": "disulfoton"
+    },
+    {
+        "viewValue": "dithianon",
+        "value": "dithianon"
+    },
+    {
+        "viewValue": "diuron",
+        "value": "diuron"
+    },
+    {
+        "viewValue": "dodemorf",
+        "value": "dodemorf"
+    },
+    {
+        "viewValue": "dodine",
+        "value": "dodine"
+    },
+    {
+        "viewValue": "epoxiconazool",
+        "value": "epoxiconazool"
+    },
+    {
+        "viewValue": "esfenvaleraat",
+        "value": "esfenvaleraat"
+    },
+    {
+        "viewValue": "ethofumesaat",
+        "value": "ethofumesaat"
+    },
+    {
+        "viewValue": "ethoprofos",
+        "value": "ethoprofos"
+    },
+    {
+        "viewValue": "ethylazinfos",
+        "value": "ethylazinfos"
+    },
+    {
+        "viewValue": "ethylbromofos",
+        "value": "ethylbromofos"
+    },
+    {
+        "viewValue": "ethylchloorpyrifos",
+        "value": "ethylchloorpyrifos"
+    },
+    {
+        "viewValue": "ethylparathion",
+        "value": "ethylparathion"
+    },
+    {
+        "viewValue": "etridiazol",
+        "value": "etridiazol"
+    },
+    {
+        "viewValue": "fenamidon",
+        "value": "fenamidon"
+    },
+    {
+        "viewValue": "fenhexamide",
+        "value": "fenhexamide"
+    },
+    {
+        "viewValue": "fenitrothion",
+        "value": "fenitrothion"
+    },
+    {
+        "viewValue": "fenmedifam",
+        "value": "fenmedifam"
+    },
+    {
+        "viewValue": "fenoxycarb",
+        "value": "fenoxycarb"
+    },
+    {
+        "viewValue": "fenpropimorf",
+        "value": "fenpropimorf"
+    },
+    {
+        "viewValue": "fenthion",
+        "value": "fenthion"
+    },
+    {
+        "viewValue": "fipronil",
+        "value": "fipronil"
+    },
+    {
+        "viewValue": "flonicamid",
+        "value": "flonicamid"
+    },
+    {
+        "viewValue": "fluazifop-P-butyl",
+        "value": "fluazifop-P-butyl"
+    },
+    {
+        "viewValue": "fluazinam",
+        "value": "fluazinam"
+    },
+    {
+        "viewValue": "flumioxazin",
+        "value": "flumioxazin"
+    },
+    {
+        "viewValue": "fluopyram",
+        "value": "fluopyram"
+    },
+    {
+        "viewValue": "flutolanil",
+        "value": "flutolanil"
+    },
+    {
+        "viewValue": "fosalon",
+        "value": "fosalon"
+    },
+    {
+        "viewValue": "fosfamidon",
+        "value": "fosfamidon"
+    },
+    {
+        "viewValue": "fosthiazaat",
+        "value": "fosthiazaat"
+    },
+    {
+        "viewValue": "furalaxyl",
+        "value": "furalaxyl"
+    },
+    {
+        "viewValue": "heptenofos",
+        "value": "heptenofos"
+    },
+    {
+        "viewValue": "hexythiazox",
+        "value": "hexythiazox"
+    },
+    {
+        "viewValue": "imazalil",
+        "value": "imazalil"
+    },
+    {
+        "viewValue": "imidacloprid",
+        "value": "imidacloprid"
+    },
+    {
+        "viewValue": "indoxacarb (S-isomeer)",
+        "value": "indoxacarb (S-isomeer)"
+    },
+    {
+        "viewValue": "iprodion",
+        "value": "iprodion"
+    },
+    {
+        "viewValue": "isoproturon",
+        "value": "isoproturon"
+    },
+    {
+        "viewValue": "kresoxim-methyl",
+        "value": "kresoxim-methyl"
+    },
+    {
+        "viewValue": "lambda-cyhalothrin",
+        "value": "lambda-cyhalothrin"
+    },
+    {
+        "viewValue": "linuron",
+        "value": "linuron"
+    },
+    {
+        "viewValue": "malathion",
+        "value": "malathion"
+    },
+    {
+        "viewValue": "mandipropamide",
+        "value": "mandipropamide"
+    },
+    {
+        "viewValue": "mepanipyrim",
+        "value": "mepanipyrim"
+    },
+    {
+        "viewValue": "mesosulfuron-methyl",
+        "value": "mesosulfuron-methyl"
+    },
+    {
+        "viewValue": "mesotrion",
+        "value": "mesotrion"
+    },
+    {
+        "viewValue": "metabenzthiazuron",
+        "value": "metabenzthiazuron"
+    },
+    {
+        "viewValue": "metalaxyl",
+        "value": "metalaxyl"
+    },
+    {
+        "viewValue": "metamitron",
+        "value": "metamitron"
+    },
+    {
+        "viewValue": "metazachloor",
+        "value": "metazachloor"
+    },
+    {
+        "viewValue": "methiocarb",
+        "value": "methiocarb"
+    },
+    {
+        "viewValue": "methiocarbsulfon",
+        "value": "methiocarbsulfon"
+    },
+    {
+        "viewValue": "methiocarbsulfoxide",
+        "value": "methiocarbsulfoxide"
+    },
+    {
+        "viewValue": "methomyl",
+        "value": "methomyl"
+    },
+    {
+        "viewValue": "methoxyfenozide",
+        "value": "methoxyfenozide"
+    },
+    {
+        "viewValue": "methyl-metsulfuron",
+        "value": "methyl-metsulfuron"
+    },
+    {
+        "viewValue": "methylazinfos",
+        "value": "methylazinfos"
+    },
+    {
+        "viewValue": "methylbromofos",
+        "value": "methylbromofos"
+    },
+    {
+        "viewValue": "methylchloorpyrifos",
+        "value": "methylchloorpyrifos"
+    },
+    {
+        "viewValue": "methylparathion",
+        "value": "methylparathion"
+    },
+    {
+        "viewValue": "methylpirimifos",
+        "value": "methylpirimifos"
+    },
+    {
+        "viewValue": "metolachloor",
+        "value": "metolachloor"
+    },
+    {
+        "viewValue": "metoxuron",
+        "value": "metoxuron"
+    },
+    {
+        "viewValue": "metrafenon",
+        "value": "metrafenon"
+    },
+    {
+        "viewValue": "metribuzin",
+        "value": "metribuzin"
+    },
+    {
+        "viewValue": "mevinfos",
+        "value": "mevinfos"
+    },
+    {
+        "viewValue": "monolinuron",
+        "value": "monolinuron"
+    },
+    {
+        "viewValue": "nicosulfuron",
+        "value": "nicosulfuron"
+    },
+    {
+        "viewValue": "oxamyl",
+        "value": "oxamyl"
+    },
+    {
+        "viewValue": "paclobutrazol",
+        "value": "paclobutrazol"
+    },
+    {
+        "viewValue": "penconazool",
+        "value": "penconazool"
+    },
+    {
+        "viewValue": "pencycuron",
+        "value": "pencycuron"
+    },
+    {
+        "viewValue": "pendimethalin",
+        "value": "pendimethalin"
+    },
+    {
+        "viewValue": "piperonyl-butoxide",
+        "value": "piperonyl-butoxide"
+    },
+    {
+        "viewValue": "pirimicarb",
+        "value": "pirimicarb"
+    },
+    {
+        "viewValue": "prochloraz",
+        "value": "prochloraz"
+    },
+    {
+        "viewValue": "procymidon",
+        "value": "procymidon"
+    },
+    {
+        "viewValue": "propachloor",
+        "value": "propachloor"
+    },
+    {
+        "viewValue": "propamocarb",
+        "value": "propamocarb"
+    },
+    {
+        "viewValue": "propazine",
+        "value": "propazine"
+    },
+    {
+        "viewValue": "propiconazol (som cis- en trans-)",
+        "value": "propiconazol (som cis- en trans-)"
+    },
+    {
+        "viewValue": "propoxur",
+        "value": "propoxur"
+    },
+    {
+        "viewValue": "propyzamide",
+        "value": "propyzamide"
+    },
+    {
+        "viewValue": "prosulfocarb",
+        "value": "prosulfocarb"
+    },
+    {
+        "viewValue": "prosulfuron",
+        "value": "prosulfuron"
+    },
+    {
+        "viewValue": "pymetrozine",
+        "value": "pymetrozine"
+    },
+    {
+        "viewValue": "pyraclostrobin",
+        "value": "pyraclostrobin"
+    },
+    {
+        "viewValue": "pyrazofos",
+        "value": "pyrazofos"
+    },
+    {
+        "viewValue": "pyridaben",
+        "value": "pyridaben"
+    },
+    {
+        "viewValue": "pyrimethanil",
+        "value": "pyrimethanil"
+    },
+    {
+        "viewValue": "pyriproxyfen",
+        "value": "pyriproxyfen"
+    },
+    {
+        "viewValue": "quizalofop-P-ethyl",
+        "value": "quizalofop-P-ethyl"
+    },
+    {
+        "viewValue": "simazine",
+        "value": "simazine"
+    },
+    {
+        "viewValue": "spinosad",
+        "value": "spinosad"
+    },
+    {
+        "viewValue": "spirodiclofen",
+        "value": "spirodiclofen"
+    },
+    {
+        "viewValue": "spiromesifen",
+        "value": "spiromesifen"
+    },
+    {
+        "viewValue": "spirotetramat",
+        "value": "spirotetramat"
+    },
+    {
+        "viewValue": "sulcotrion",
+        "value": "sulcotrion"
+    },
+    {
+        "viewValue": "tebuconazol",
+        "value": "tebuconazol"
+    },
+    {
+        "viewValue": "tebufenpyrad",
+        "value": "tebufenpyrad"
+    },
+    {
+        "viewValue": "terbutrin",
+        "value": "terbutrin"
+    },
+    {
+        "viewValue": "terbutylazine",
+        "value": "terbutylazine"
+    },
+    {
+        "viewValue": "tetrachloorvinfos (mixed isomeren)",
+        "value": "tetrachloorvinfos (mixed isomeren)"
+    },
+    {
+        "viewValue": "tetrahydroftaalimide",
+        "value": "tetrahydroftaalimide"
+    },
+    {
+        "viewValue": "thiacloprid",
+        "value": "thiacloprid"
+    },
+    {
+        "viewValue": "thiamethoxam",
+        "value": "thiamethoxam"
+    },
+    {
+        "viewValue": "thifensulfuron-methyl",
+        "value": "thifensulfuron-methyl"
+    },
+    {
+        "viewValue": "thiofanaat-methyl",
+        "value": "thiofanaat-methyl"
+    },
+    {
+        "viewValue": "thiometon",
+        "value": "thiometon"
+    },
+    {
+        "viewValue": "tolclofos-methyl",
+        "value": "tolclofos-methyl"
+    },
+    {
+        "viewValue": "tolylfluanide",
+        "value": "tolylfluanide"
+    },
+    {
+        "viewValue": "topramezon",
+        "value": "topramezon"
+    },
+    {
+        "viewValue": "trans-fluoxastrobin",
+        "value": "trans-fluoxastrobin"
+    },
+    {
+        "viewValue": "trans-permethrin",
+        "value": "trans-permethrin"
+    },
+    {
+        "viewValue": "trans-pyrifenox",
+        "value": "trans-pyrifenox"
+    },
+    {
+        "viewValue": "triadimenol",
+        "value": "triadimenol"
+    },
+    {
+        "viewValue": "triallaat",
+        "value": "triallaat"
+    },
+    {
+        "viewValue": "triazofos",
+        "value": "triazofos"
+    },
+    {
+        "viewValue": "trifloxystrobin",
+        "value": "trifloxystrobin"
+    },
+    {
+        "viewValue": "triflumizool",
+        "value": "triflumizool"
+    },
+    {
+        "viewValue": "trifluraline",
+        "value": "trifluraline"
+    },
+    {
+        "viewValue": "triflusulfuron-methyl",
+        "value": "triflusulfuron-methyl"
+    },
+    {
+        "viewValue": "trinexapac-ethyl",
+        "value": "trinexapac-ethyl"
+    },
+    {
+        "viewValue": "vinclozolin",
+        "value": "vinclozolin"
+    },
+    {
+        "viewValue": "Hybride vis",
+        "value": "Hybride vis"
+    },
+    {
+        "viewValue": "Grote drijfbladplanten",
+        "value": "Grote drijfbladplanten"
+    },
+    {
+        "viewValue": "Emerse planten",
+        "value": "Emerse planten"
+    },
+    {
+        "viewValue": "Flab (Floating Algae Beds)",
+        "value": "Flab (Floating Algae Beds)"
+    },
+    {
+        "viewValue": "Kroos",
+        "value": "Kroos"
+    },
+    {
+        "viewValue": "som submerse planten en draadalgen",
+        "value": "som submerse planten en draadalgen"
+    },
+    {
+        "viewValue": "Geur",
+        "value": "Geur"
+    },
+    {
+        "viewValue": "Kleur",
+        "value": "Kleur"
+    },
+    {
+        "viewValue": "Olie",
+        "value": "Olie"
+    },
+    {
+        "viewValue": "Schuim",
+        "value": "Schuim"
+    },
+    {
+        "viewValue": "som 4 chlorofyl-a fracties",
+        "value": "som 4 chlorofyl-a fracties"
+    },
+    {
+        "viewValue": "Vuil",
+        "value": "Vuil"
+    }
+]
