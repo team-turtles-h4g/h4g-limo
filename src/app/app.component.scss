@@ -1,0 +1,207 @@
+#viewDiv {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#infoDiv {
+    position: absolute;
+    top: 16px;
+    right: 30px;
+    padding: 10px;
+    width: 200px;
+    // height: 320px;
+}
+
+.limo-green-logo {
+    height: 80px;
+    width: auto;
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.info-panel-bottom {
+    position: absolute;
+    width: 80vw;
+    left: 30px;
+    bottom: 40px;
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 8px 16px;
+    background: rgba($color: #92a67c, $alpha: 0.6);
+}
+
+.app-header {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    left: 64px;
+}
+
+.kpi-container {
+    padding: 16px;
+    font-size: 32px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    margin: 16px;
+    border-radius: 8px;
+}
+
+#infoDiv {
+    width: 15vw;
+    top: 160px;
+    right: 0px;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.9;
+    background-color: whitesmoke;
+    padding: 8px;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+    #chemicalFilter {
+        max-width: 100%;
+    }
+}
+
+#legendsDiv {
+    width: 15vw;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.9;
+    background-color: whitesmoke;
+    padding: 8px;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+#timeSliderDiv {
+    width: 66vw;
+    left: 105%;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.9;
+    background-color: whitesmoke;
+    padding: 8px;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+@media screen and (min-width: 1400px) {
+    .kpi-container {
+        padding: 16px;
+        font-size: 24px;
+        font-weight: bold;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid black;
+        margin: 16px;
+        border-radius: 8px;
+    }
+}
+
+.LegendsCls {
+    height: 25px;
+    border-bottom: 2px solid #d5d0d0;
+    margin-top: 8px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  select {
+    padding:9px;
+    margin: 0;
+    border-radius:4px;
+    -webkit-box-shadow: 
+        0 0px 0 #ccc,
+        0 0px #fff inset;
+    color:black;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none; 
+    cursor:pointer;
+    border: 1px solid #ccc;
+}
+
+option {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.FilterLabel {
+  font-weight: 600;
+  font-size: 12px;;
+}

@@ -1,0 +1,80 @@
+<div class="app-header div-flex-full-center">
+    <div class="kpi-container">
+      Water quality {{waterquality}}%
+    </div>
+    <div class="kpi-container">
+      Plant growth over one year in {{plantgrowth}}%
+    </div>
+    <div class="kpi-container">
+      Probable origin point {{originpoint}}
+    </div>
+</div>
+<div id="viewDiv"></div>
+<div id="infoDiv" class="selectChemical">
+    <label class="FilterLabel">Filter by chemicals:</label> 
+    <select id="chemicalFilter">
+        <option value="">All</option>
+        <option *ngFor="let chemical of chemicalList" [value]="chemical.value">{{chemical.viewValue}}</option>
+    </select>
+</div>
+
+<div id="timeSliderDiv">
+</div>
+
+<div id="legendsDiv">
+    <div *ngFor="let Legends of LegendsData">
+      <div class="LegendsCls">
+        <label class="container">
+          {{ Legends.name }}
+          <input type="checkbox" checked (click)="onChange($event, Legends.id)" />
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+</div>
+
+<img class="limo-green-logo" src="../assets/limo-icon.png">
+<!-- <div id="infoDiv" class="esri-widget">
+  <h4 id="titleText" class="esri-widget__heading esri-editor__title">
+    Water Pollutants - Netherlands
+  </h4>
+  <br />
+  <div class="esri-widget">
+    <calcite-slider min-value="0" max-value="4" min="0" max="4" label-ticks>
+    </calcite-slider>
+    <calcite-label><b>Select Chemical:</b>
+      <calcite-radio-button-group name="Select land type" layout="vertical" id="landCoverTypeSelect" scale="s">
+        <calcite-label layout="inline">
+          <calcite-radio-button id="forests" value="forests" checked></calcite-radio-button>Forested Areas
+        </calcite-label>
+        <calcite-label layout="inline">
+          <calcite-radio-button value="developed"></calcite-radio-button>Developed Areas
+        </calcite-label>
+        <calcite-label layout="inline">
+          <calcite-radio-button value="crops"></calcite-radio-button>Cultivated Areas
+        </calcite-label>
+        <calcite-label layout="inline">
+          <calcite-radio-button value="hay"></calcite-radio-button>Hay/Pasture Areas
+        </calcite-label>
+        <calcite-label layout="inline">
+          <calcite-radio-button value="wetlands"></calcite-radio-button>Wetlands
+        </calcite-label>
+      </calcite-radio-button-group>
+    </calcite-label>
+  </div>
+  <div id="projectionDiv" class="esri-widget">
+    <p><b>Please select a chemical:</b></p>
+    <select id="projectWKID" class="esri-input esri-select">
+      <option value="102003" selected>Albers Equal Area</option>
+      <option value="102100">Web Mercator</option>
+      <option value="4326">WGS 84</option>
+    </select>
+  </div>
+</div> -->
+<div class="info-panel-bottom" *ngIf="this.showLandingBanner" [@inOutAnimation]>
+    <h1 class="app-title">Welcome to Limo - Grow More Grow Smart</h1>
+    <p class="app-subtitle">
+        Limo gives seamless, intuitive access to high quality academic data.
+        Become a part of the Limo community, learn from the best, produce more, produce better, produce sustainable.
+    </p>
+</div>
