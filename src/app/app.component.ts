@@ -79,7 +79,7 @@ export class AppComponent implements OnInit {
       value: 1
     }
   ];
-
+  
   constructor(private http: HttpClient) {
     this.http.get("./assets/chemicals.json").subscribe((_chemList: any) => {
       this.chemicalList = _chemList;
@@ -93,7 +93,7 @@ export class AppComponent implements OnInit {
     }, 8000);
 
     this.SetKPIPercentage();
-    this.originpoint = "4.288, 52.078"; 
+    this.originpoint = "4.288, 52.078";
 
     EsriConfig.apiKey = environment.esriConfigApiKey;
 
@@ -113,11 +113,11 @@ export class AppComponent implements OnInit {
           zoom: 11, // Zoom level
           container: this.mapDiv // Div element,
         });
-        
+
         //#region KPI indicator
         this.view.watch('zoom', (_newValue, _oldValue) => {
           this.SetKPIPercentage();
-          this.originpoint = parseFloat(_newValue).toFixed(3)  + ', ' + parseFloat(_oldValue).toFixed(3);
+          this.originpoint = parseFloat(_newValue).toFixed(3) + ', ' + parseFloat(_oldValue).toFixed(3);
         });
         //#endregion
 
@@ -187,7 +187,7 @@ export class AppComponent implements OnInit {
             },
             {
               layer: this.checmicalLayer,
-              title: "Chemicals Measurement"
+              title: "Water Quality Measurement Points"
             }
           ]
         });
