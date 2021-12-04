@@ -79,7 +79,11 @@ export class AppComponent implements OnInit {
       value: 1
     }
   ];
-  
+
+  filteredChemicalValue: string;
+  startTimeExtent: string;
+  endTimeExtent: string;
+
   constructor(private http: HttpClient) {
     this.http.get("./assets/chemicals.json").subscribe((_chemList: any) => {
       this.chemicalList = _chemList;
@@ -164,8 +168,8 @@ export class AppComponent implements OnInit {
         // filters the layer using a definitionExpression
         // based on a religion selected by the user
         filter.addEventListener("change", (evt: any) => {
-          var newValue = evt.target.value;
-          this.updateDefinitionExpression(newValue);
+          this.filteredChemicalValue = evt.target.value;
+          this.updateDefinitionExpression();
         });
         //#endregion
 
@@ -198,10 +202,11 @@ export class AppComponent implements OnInit {
         //#region Time slider
         const timeSlider = new TimeSlider({
           container: "timeSliderDiv",
-          mode: "cumulative-from-start",
+          mode: "time-window",
           timeVisible: true,
-          loop: true
+          loop: true,
         });
+
         this.view.ui.add(timeSlider, {
           position: "bottom-left",
           index: 3
@@ -219,15 +224,15 @@ export class AppComponent implements OnInit {
 
           // set up time slider properties based on layer timeInfo
           timeSlider.timeExtent = new TimeExtent({
-            start: null,
+            start: '01/01/2020',
             end: "01/01/2021"
           });
         });
 
         timeSlider.watch("timeExtent", () => {
-          let triggeredDate = moment(timeSlider.timeExtent.end).format("MM/DD/YYYY hh:mm A");
-          this.checmicalLayer.definitionExpression =
-            `Resultaatd >= '12/31/2019 11:59 PM' and Resultaatd <= '${triggeredDate}'`;
+          this.startTimeExtent = moment(timeSlider.timeExtent.start).format("MM/DD/YYYY hh:mm A");
+          this.endTimeExtent = moment(timeSlider.timeExtent.end).format("MM/DD/YYYY hh:mm A");
+          this.updateDefinitionExpression();
         });
         //#endregion
 
@@ -252,8 +257,13 @@ export class AppComponent implements OnInit {
     }, 300);
   }
 
-  updateDefinitionExpression(value) {
-    let definitionExpression = value ? `Paramete_2 = '${value}'` : null;
+  updateDefinitionExpression() {
+    let chemicalDefExpression = this.filteredChemicalValue
+      ? `Paramete_2 = '${this.filteredChemicalValue}'` : null;
+    let dateDefExpression = `Resultaatd >= '${this.startTimeExtent}' AND Resultaatd <= '${this.endTimeExtent}'`;
+
+    let definitionExpression = chemicalDefExpression
+      ? `${chemicalDefExpression} AND ${dateDefExpression}` : dateDefExpression;
     this.checmicalLayer.definitionExpression = definitionExpression;
     // (<any>this.map).infoWindow.hide();
   }
