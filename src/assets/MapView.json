@@ -1,0 +1,107 @@
+[
+    {
+        "viewValue": "Community Map",
+        "value": "arcgis-community"
+    },
+    {
+        "viewValue": "Imagery Hybrid",
+        "value": "arcgis-imagery"
+    },
+    {
+        "viewValue": "Imagery",
+        "value": "arcgis-imagery-standard"
+    },
+    {
+        "viewValue": "Imagery Label",
+        "value": "arcgis-imagery-labels"
+    },
+    {
+        "viewValue": "Light Gray",
+        "value": "arcgis-light-gray"
+    },
+    {
+        "viewValue": "Dark Gray",
+        "value": "arcgis-dark-gray"
+    },
+    {
+        "viewValue": "Navigation",
+        "value": "arcgis-navigation"
+    },
+    {
+        "viewValue": "Navigation (Night)",
+        "value": "arcgis-navigation-night"
+    },
+    {
+        "viewValue": "Streets",
+        "value": "arcgis-streets"
+    },
+    {
+        "viewValue": "Streets (Night)",
+        "value": "arcgis-streets-night"
+    },
+    {
+        "viewValue": "Streets (with Relief)",
+        "value": "arcgis-streets-relief"
+    },
+    {
+        "viewValue": "Topographic",
+        "value": "arcgis-topographic"
+    },
+    {
+        "viewValue": "Oceans",
+        "value": "arcgis-oceans"
+    },
+    {
+        "viewValue": "OpenStreetMap",
+        "value": "osm-standard"
+    },
+    {
+        "viewValue": "OpenStreetMap (with Relief)",
+        "value": "osm-standard-relief"
+    },
+    {
+        "viewValue": "OpenStreetMap (Streets)",
+        "value": "osm-streets"
+    },
+    {
+        "viewValue": "OpenStreetMap (Streets with Relief)",
+        "value": "osm-streets-relief"
+    },
+    {
+        "viewValue": "OpenStreetMap (Light Gray Canvas)",
+        "value": "osm-light-gray"
+    },
+    {
+        "viewValue": "OpenStreetMap (Dark Gray Canvas)",
+        "value": "osm-dark-gray"
+    },
+    {
+        "viewValue": "Terrain with Labels",
+        "value": "arcgis-terrain"
+    },
+    {
+        "viewValue": "Charted Territory Map",
+        "value": "arcgis-charted-territory"
+    },
+
+    {
+        "viewValue": "Colored Pencil Map",
+        "value": "arcgis-colored-pencil"
+    },
+    {
+        "viewValue": "Nova Map",
+        "value": "arcgis-nova"
+    },
+    {
+        "viewValue": "Modern Antique Map",
+        "value": "arcgis-modern-antique"
+    },
+    {
+        "viewValue": "Mid-Century Map",
+        "value": "arcgis-midcentury"
+    },
+    {
+        "viewValue": "Newspaper Map",
+        "value": "arcgis-newspaper"
+    }
+]
