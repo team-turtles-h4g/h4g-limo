@@ -1,0 +1,177 @@
+.login-page-container {
+    height: 100vh;
+    width: 100vw;
+    background: floralwhite;
+    overflow-x: auto;
+}
+
+.signup-login-form {
+    position: fixed;
+    right: 24px;
+    top: 10vh;
+    padding: 32px;
+    border-radius: var(--border-radius);
+    border: 1px solid black;
+    box-shadow: var(--basic-box-shadow);
+    height: 80vh;
+    width: calc(30vw - 24px);
+    overflow: auto;
+    background: rgba(255, 255, 255, 1);
+    /* transition: 0.3s; */
+}
+
+.login-title {
+    color: var(--logo-brown);
+    text-align: center;
+    font-size: 16px;
+}
+
+.login-input {
+    color: black;
+}
+
+.limo-logo {
+    height: 80px;
+    width: auto;
+}
+
+.change-to-login {
+    margin-top: 16px;
+}
+
+.login-button-container {
+    margin-top: 16px;
+}
+
+.forgot-password-link {
+    margin-top: 16px;
+}
+
+.login-info-text {
+    font-size: 12px;
+    margin: 8px;
+}
+
+.sign-up-button {
+    margin-top: 16px;
+}
+
+.slide-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: black;
+}
+.slide-title-container {
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    z-index: 1;
+    max-width: 50vw;
+}
+.slide-title {
+    line-height: normal;
+    font-weight: bold;
+    color: white;
+    font-size: 48px;
+    text-shadow: 2px 2px black;
+}
+.slide-subtitle {
+    line-height: normal;
+    color: white;
+    font-size: 16px;
+    padding-top: 24px;
+}
+
+.slide-hero-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+}
+
+.width-33 {
+    width: 33.33%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.selling-stats-container {
+    display: flex;
+}
+
+.selling-stats {
+    margin: 16px 8px;
+    display: flex;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 24px;
+    background: var(--logo-green);
+    justify-content: center;
+    align-items: center;
+}
+.selling-stats-red {
+    margin: 16px 8px;
+    display: flex;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 24px;
+    background: var(--danger);
+    justify-content: center;
+    align-items: center;
+}
+.selling-stats-icon-container {
+    height: 100%;
+}
+.selling-stats mat-icon {
+    color: white;
+}
+.selling-text {
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 16px;
+}
+
+.below-carousel-section {
+    padding: 24px;
+    width: 70vw;
+}
+.main-title {
+    line-height: normal;
+    font-weight: bold;
+    color: white;
+    font-size: 64px;
+    -webkit-text-fill-color: var(--logo-green-tint);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    padding-bottom: 24px;
+}
+
+mat-card-content p {
+    font-size: 12px;
+}
+
+.dux-features-list {
+    color: black;
+    line-height: 3em;
+}
+
+.ul,
+li {
+    font-size: 16px;
+}
+
+.list-bold{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--logo-green-tint);
+}

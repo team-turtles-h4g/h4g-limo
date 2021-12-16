@@ -1,0 +1,311 @@
+<div class="login-page-container limo-scrollbar">
+    <carousel class="login-carousel" [interval]="carouselSlideTime" [noPause]="false" [pauseOnFocus]="true">
+        <slide>
+            <div class="slide-container">
+                <div class="slide-title-container">
+                    <div class="slide-title">
+                        The Second Green Revolution Begins
+                    </div>
+                    <div class="slide-subtitle">
+                        And it facilitated by DATA. Clear, crisp, visual, intuitive data that paints a picture so you can decide better.
+                        <br>
+                        <br>
+                        Stop aiming in the dark. Widen your horizon. Make informed decisions with Limo's community and public data sets
+                        to grow more, grow smart and grow better all while being sustainable. Too good to be true, isn't it?. See for yourself.
+                        <br>
+                        <div class="selling-stats-container">
+                            <div class="selling-stats-red width-50">
+                                <mat-icon>work</mat-icon>
+                                <div class="selling-text">
+                                    Impacting nearly 800 greenhouses in Netherlands.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../../assets/pexels-iconcom-736779.jpg" alt="first slide"
+                    class="slide-hero-image">
+            </div>
+        </slide>
+        <slide>
+            <div class="slide-container">
+                <div class="slide-title-container">
+                    <div class="slide-title">
+                        Learn From the Community
+                    </div>
+                    <div class="slide-subtitle">
+                        Gone are the days when you called your neighbour to ask about that latest irrigation system or how his greenhouse is performing.
+                        <br>
+                        <br>
+                        Limo data sets are fed by the community showing exactly how you are doing compared to your peers. A reality check with suggestions on being the
+                        best of them all. Limo aspires to being everyone at the same level which is the best of the community.
+                        <br>
+                        <div class="selling-stats-container">
+                            <div class="selling-stats width-50">
+                                <mat-icon>desktop_windows</mat-icon>
+                                <div class="selling-text">
+                                    Majority of the growers are unsure about their performance compared to their peers.
+                                </div>
+                            </div>
+                            <!-- ************ -->
+                            <div class="selling-stats width-50">
+                                <mat-icon>chair</mat-icon>
+                                <div class="selling-text">
+                                    Articles, posts, inspiration from the most efficient growers.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../../assets/pexels-greta-hoffman-7728657.jpg" alt="first slide" class="slide-hero-image">
+            </div>
+        </slide>
+        <slide>
+            <div class="slide-container">
+                <div class="slide-title-container">
+                    <div class="slide-title">
+                        There Is Only One Planet!
+                    </div>
+                    <div class="slide-subtitle">
+                        Easy to forget, but we are surrounded by hard lifeless vacuum for eternity and unless we find a
+                        wormhole to get into (its not easy, we all watched Interstellar), this is the only planet.
+                        <br>
+                        <br>
+                        Limo promotes sustainable farming. Policy makers can create better policies with a hollistic view of the
+                        horticulture's impact and conservationists can focus their efforts on the most affected areas.
+                    </div>
+                    <div class="selling-stats-container">
+                        <div class="selling-stats width-33">
+                            <mat-icon>desktop_windows</mat-icon>
+                            <div class="selling-text width-33">
+                                10% of the Dutch GHG emissions are from horticulture.
+                            </div>
+                        </div>
+                        <!-- ************ -->
+                        <div class="selling-stats width-33">
+                            <mat-icon>chair</mat-icon>
+                            <div class="selling-text">
+                                Horticulture generates toxic by-products which pollute natural resources.
+                            </div>
+                        </div>
+                        <!-- ************ -->
+                        <div class="selling-stats width-33">
+                            <mat-icon>chair</mat-icon>
+                            <div class="selling-text">
+                                Add one more point here.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../../assets/pexels-spacex-586056.jpg" alt="first slide" class="slide-hero-image">
+            </div>
+        </slide>
+    </carousel>
+    <!-- ****************************************************************** -->
+    <div class="signup-login-form limo-scrollbar">
+        <div class="div-flex-full-center">
+            <button mat-button (click)="logoClicked()">
+                <img class="limo-logo" src="../../../assets/limo-icon.png">
+            </button>
+        </div>
+        <h2 class="login-title">
+            Welcome to Limo! Please Sign Up. Free Forever.
+        </h2>
+        <div *ngIf="isSignUp">
+            <form [formGroup]="signUpForm">
+                <div class="flex-container-column">
+                    <mat-form-field appearance="outline" class="login-input">
+                        <mat-label>First Name</mat-label>
+                        <input type="text" formControlName="firstName" matInput>
+                        <mat-error>Please enter your first name.</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="login-input">
+                        <mat-label>Last Name</mat-label>
+                        <input type="text" formControlName="lastName" matInput>
+                        <mat-error>Please enter your last name.</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="login-input">
+                        <mat-label>Mobile No.</mat-label>
+                        <input type="number" formControlName="mobile" matInput>
+                        <mat-error>Please enter your mobile no.</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="login-input">
+                        <mat-label>Email</mat-label>
+                        <input type="email" formControlName="email" matInput>
+                        <mat-error>Please enter a valid email.</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="login-input">
+                        <mat-label>Password</mat-label>
+                        <input type="password" formControlName="password" matInput>
+                        <mat-error *ngIf="signUpForm.controls.password.errors?.required">
+                            Please enter a password.
+                          </mat-error>
+                          <mat-error *ngIf="signUpForm.controls.password.errors?.whitespaceError">
+                            Whitespace not allowed.
+                          </mat-error>
+                          <mat-error *ngIf="signUpForm.controls.password.errors?.lengthError">
+                            Password must be between 4 and 100 characters.
+                          </mat-error>
+                          <mat-error *ngIf="signUpForm.controls.password.errors?.noNumberError">
+                            Password must contain a number.
+                          </mat-error>
+                          <mat-error *ngIf="signUpForm.controls.password.errors?.noUpperCase">
+                            Password must contain an uppercase letter.
+                          </mat-error>
+                          <mat-error *ngIf="signUpForm.controls.password.errors?.noLowerCase">
+                            Password must contain a lowercase letter.
+                          </mat-error>
+                          <!-- <mat-error *ngIf="signUpForm.controls.password.errors?.noSpecialChar">
+                            Password must contain a special character (! @ # $ % ^ * + - _ = ; : , ?).
+                          </mat-error> -->
+                    </mat-form-field>
+                </div>
+                <div class="div-flex-full-center sign-up-button">
+                    <button color="primary" type="submit" mat-raised-button (click)="signUpClicked()">Sign
+                        Up</button>
+                </div>
+                <div class="div-flex-full-center-col change-to-login">
+                    <p>Already have an account?</p>
+                    <button color="accent" mat-raised-button (click)="isSignUp=false">Login</button>
+                </div>
+            </form>
+        </div>
+        <!-- *************************************************************************** -->
+        <div *ngIf="!isSignUp && !isForgotPassword">
+            <button mat-icon-button (click)="isSignUp=true">
+                <mat-icon class="material-icons-outlined" style="color: black;">
+                    arrow_back
+                </mat-icon>
+            </button>
+            <p class="login-info-text">Please reset your password.</p>
+            <form [formGroup]="loginForm">
+                <div class="flex-container-column">
+                    <mat-form-field appearance="outline" class="login-input">
+                        <mat-label>Email</mat-label>
+                        <input type="email" formControlName="email" matInput>
+                        <mat-error>Please enter a valid email.</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="login-input">
+                        <mat-label>Password</mat-label>
+                        <input type="password" formControlName="password" matInput>
+                        <mat-error>Please enter your password.</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="div-flex-full-center-col login-button-container">
+                    <button color="accent" type="submit" mat-raised-button (click)="loginClicked()">Login</button>
+                    <p class="forgot-password-link pointer"><span matRipple
+                            (click)="isForgotPassword=true; isSignUp=false">Forgot password?</span></p>
+                </div>
+            </form>
+        </div>
+        <!-- *************************************************************** -->
+        <div *ngIf="isForgotPassword">
+            <button mat-icon-button (click)="isForgotPassword=false; isSignUp=false">
+                <mat-icon class="material-icons-outlined" style="color: black;">
+                    arrow_back
+                </mat-icon>
+            </button>
+            <div class="flex-container-column">
+                <p class="login-info-text">
+                   An email will be sent to your registered email address with a link to reset the password.
+                </p>
+            </div>
+            <div class="div-flex-full-center-col login-button-container">
+                <button mat-raised-button color="primary" (click)="logoClicked()">Visit Limo Website</button>
+            </div>
+        </div>
+    </div>
+    <div class="below-carousel-section">
+        <div class="main-title">
+            Limo Features
+        </div>
+        <ul class="dux-features-list">
+            <li>
+                <span class="list-bold">Platform independent - </span>
+                Use Limo on any device! Web app infrastructure.
+            </li>
+            <li>
+                <span class="list-bold">Intuitive - </span>
+                Conventional navigational map like interface.
+            </li>
+            <li>
+                <span class="list-bold">Grower community - </span>
+                Connect with your peers like never before.
+                <ul>
+                    <li>
+                        Learn from highly efficient growers. What works for them?
+                    </li>
+                    <li>
+                        Understand your performance compared to the entire community.
+                    </li>
+                    <li>
+                        Track your farm's performance with reports.
+                    </li>
+                    <li>
+                        Identify polluting areas in the community.
+                    </li>
+                    <li>
+                        Share your experience with posts and updates.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="list-bold">Knowledge is power - </span>
+                New technology made easy.
+                <ul>
+                    <li>
+                        Read about the latest trends in horticulture technology.
+                    </li>
+                    <li>
+                        Understand the impact of new and obsolete technology.
+                    </li>
+                    <li>
+                        Get guidance on implementing new technology with paid experts and technicians available.
+                    </li>
+                    <li>
+                        Understand the best practices prevelant in the community.
+                    </li>
+                    <li>
+                        All curated news and updates in one spot.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="list-bold">Audits - </span>
+                Struggling to identify areas of improvement? Or stuck with a seemingly unsolvable problem?
+                <ul>
+                    <li>
+                        We got you covered.
+                    </li>
+                    <li>
+                        Hire experts to audit your farm virtually or physically and suggest a clear plan of action to improve efficiency
+                        or solve a problem.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="list-bold">Sustainability - </span>
+                10% of Dutch GHG is from horticulture farming. There is a huge environmental impact!
+                <ul>
+                    <li>
+                        Identify polluting areas to draft a plan of action.
+                    </li>
+                    <li>
+                        Focus conservation efforts in affected areas.
+                    </li>
+                    <li>
+                        Get environmental data such as water pollution metrics and data points, biodiversity indicators etc.
+                    </li>
+                    <li>
+                        Understand community environmental impact.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

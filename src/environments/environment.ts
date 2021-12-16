@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  esriConfigApiKey: "AAPKe2509e137b1a44b981ff765e7ff75008Ir4bx9jQcA_XlNlw7l3hpLNgqwTtJ2uYPpHdD0hVlkjB8MAZRn9NBLINiIzogHI4"
+  esriConfigApiKey: "AAPKe2509e137b1a44b981ff765e7ff75008Ir4bx9jQcA_XlNlw7l3hpLNgqwTtJ2uYPpHdD0hVlkjB8MAZRn9NBLINiIzogHI4",
+  encryptionPass: "+WS?TsCNn+3$MwM*"
 };
 
 /*

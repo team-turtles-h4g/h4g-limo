@@ -1,9 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
 @import "@esri/calcite-components/dist/calcite/calcite.css";
 
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+:root {
+    /* rgba(35, 145, 77, 1) */
+    --logo-green: #23914d;
+    --logo-green-shade: #1c743e;
+    --logo-green-extra-shade: #15572e;
+    --logo-green-extra-extra-shade: #0e3a1f;
+    --logo-green-tint: #4fa771;
+    --logo-green-extra-tint: #7bbd94;
+    --logo-green-extra-extra-tint: #a7d3b8;
+
+    --logo-brown: #7e5f52;
+    --logo-brown-shade: #654c42;
+    --logo-brown-tint: #987f75;
+
+    --danger: #cc3300;
+    --danger-shade: #a32900;
+    --danger-extra-shade: #7a1f00;
+    --danger-extra-extra-shade: #521400;
+    --danger-tint: #d65c33;
+    --danger-extra-tint: #e08566;
+    --danger-extra-extra-tint: #ebad99;
+
+    --warning: #ffcc00;
+    --warning-shade: #cca300;
+    --warning-extra-shade: #997a00;
+    --warning-extra-extra-shade: #665200;
+    --warning-tint: #ffd633;
+    --warning-extra-tint: #ffe066;
+    --warning-extra-extra-tint: #ffeb99;
+
+    --border-radius: 4px;
+    --shade-white: rgba(255, 255, 255, 0.35);
+    --basic-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    /* --basic-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
+    --basic-box-shadow-green: 0 4px 8px 0 rgba(35, 145, 77, 0.2);
+
+    --transluscent-background: rgba(0, 0, 0, 0.2) !important;
+    --transluscent-background-hover: rgba(0, 0, 0, 0.8) !important;
+
+    --footer-background: var(--logo-green);
+}
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+}
+
+
 body {
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     margin: 0;
     padding: 0;
 }
@@ -12,4 +65,101 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.flex-container-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-centered {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.pointer {
+    cursor: pointer !important;
+}
+
+.custom-snack-error {
+    background: var(--danger);
+    color: white;
+}
+.custom-snack-error .mat-simple-snackbar-action {
+    color: white;
+}
+
+.custom-snack-success {
+    background: var(--logo-green);
+    color: white;
+}
+.custom-snack-success .mat-simple-snackbar-action {
+    color: white;
+}
+
+.custom-snack-normal {
+    background: white;
+    color: black;
+}
+.custom-snack-normal .mat-simple-snackbar-action {
+    color: black;
+}
+
+.custom-snack-warn {
+    background: var(--warning);
+    color: white;
+}
+.custom-snack-warn .mat-simple-snackbar-action {
+    color: white;
+}
+
+.div-flex-full-center-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.limo-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: var(--logo-brown-tint);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.limo-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--logo-brown-shade);
+    border-radius: 3px;
+}
+
+.limo-scrollbar {
+    scrollbar-color: var(--logo-brown-shade) var(--logo-brown-tint);
+    scrollbar-width: thin;
+}
+
+.test-not-button span {
+    font-size: 10px;
+}
+
+.logout-button span {
+    font-size: 8px;
+}
+
+.login-carousel .carousel-control-prev,
+.login-carousel .carousel-control-next {
+    display: none;
+}
+
+.logout-button span {
+    font-size: 8px;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }

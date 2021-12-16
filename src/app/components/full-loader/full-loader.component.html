@@ -1,0 +1,16 @@
+<ng-container *ngIf="show">
+    <div class="backdrop"></div>
+
+    <div id="loader-wrapper">
+        <div class="flex-box-spinner">
+            <div id="loader"> </div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+            <img src="../../../assets/limo-icon.png" class="logoimg">
+        </div>
+    </div>
+
+    <div class="full-loader-text">
+        <p *ngIf="message">{{message}}</p>
+    </div>
+</ng-container>
