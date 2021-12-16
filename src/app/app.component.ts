@@ -21,6 +21,8 @@ import PopupTemplateProperties from "@arcgis/core/PopupTemplate";
 import FeatureReductionCluster from "@arcgis/core/layers/support/FeatureReductionCluster";
 import VisualVariable from "@arcgis/core/renderers/visualVariables/VisualVariable";
 import SimpleMarkerSymbol from "@arcgis/core/symbols/SimpleMarkerSymbol";
+import ColorVariable from "@arcgis/core/renderers/visualVariables/ColorVariable";
+import SizeVariable from "@arcgis/core/renderers/visualVariables/SizeVariable";
 
 interface Legends {
   id: number;
@@ -324,88 +326,179 @@ export class AppComponent implements OnInit {
     let retlayer: any;
     switch (EnumMapLayerType) {
       case MapLayerType.Chemicals:
+        const colorVisVar = {
+          type: "color",
+          field: "MonsterC_1",
+          //normalizationField: "SQ_KM",
+          stops: [
+            { value: 7, color: "#2b83ba" },
+            { value: 600, color: "#abdda4" },
+            { value: 1200, color: "#ffffbf" },
+            { value: 1800, color: "#fdae61" },
+            { value: 2400, color: "#d7191c" }
+          ],
+          legendOptions: {
+            title: "Population per square kilometer"
+          }
+        };
+
+        const sizeVisualVariable = {
+          type: "size",
+          field: "Paramete_3",
+          minDataValue: 0,
+          maxDataValue: 2400,
+          minSize: 8,
+          maxSize: 40
+        };
+
+        const opacityVisualVariable = {
+          type: "opacity",
+          field: "MonsterC_1",
+          // maps data values to opacity values
+          stops: [
+            { value: 0, opacity: 0.1 },
+            { value: 100, opacity: 1 }
+          ]
+        };
+
+        const rotationVisualVariable = {
+          type: "rotation",
+          field: "Paramete_1",
+          rotationType: "geographic"
+        };
+
+        const rederer1 = new SimpleRenderer({
+          symbol: new SimpleMarkerSymbol({
+            path: "M14.5,29 23.5,0 14.5,9 5.5,0z",
+            color: [50, 50, 50],
+            outline: {
+              color: [0, 0, 0, 0.7],
+              width: 0.5
+            },
+            angle: 180,
+            size: 15
+          }),
+          visualVariables: [sizeVisualVariable, colorVisVar, rotationVisualVariable ]
+        });
+
+        // const rederer = new SimpleRenderer({
+        //   symbol: new SimpleFillSymbol({
+        //     color: "#C84B31",
+        //     style: "solid",
+        //     outline: new SimpleLineSymbol({
+        //       width: 1,
+        //       color: "#950101",
+        //     }),
+        //   }),
+        //   visualVariables: [colorVisVar, sizeVisualVariable, opacityVisualVariable, rotationVisualVariable ]
+        // });
+
         this.checmicalLayer = new FeatureLayer({
           url: "https://services3.arcgis.com/jNF04dtssnue8VcP/arcgis/rest/services/measure_locations_shortv/FeatureServer/0",
-          outFields: ["Paramete_2", "Paramete_3", "MonsterC_1"],
-          // popupTemplate: {
-          //   title: "{Paramete_2} - {Paramete_1}",
-          //   content: [
+          outFields:["MonsterC_1", "Paramete_1", "Paramete_2", "Paramete_3"],
+          popupTemplate: {
+            outFields: ["Paramete_1", "Paramete_2", "Paramete_3", "MonsterC_1"],
+            content: [
+              {
+              type: "text",
+              outFields: ["Paramete_2", "Paramete_3", "MonsterC_1"],
+              text: "{Paramete_2} - {Paramete_1}"
+            }, 
+            {
+              type: "fields",
+              outFields: ["Paramete_3", "MonsterC_1", "Resultaatd", "Numeriekew"],
+              fieldInfos: [{
+                fieldName: "Paramete_3",
+                label: "Chemical Bond",
+                format: {
+                  places: 0
+                }
+              }, {
+                fieldName: "MonsterC_1",
+                label: "Measurement taken from",
+                format: {
+                  places: 0
+                }
+              }, {
+                fieldName: "Resultaatd",
+                label: "Result Date",
+                format: {
+                  places: 0
+                }
+              },{
+                fieldName: "Numeriekew",
+                label: "Value",
+                format: {
+                  places: 0
+                }
+              }]
+            }]
+          },
+          // //popupEnabled: true,
+          // featureReduction: {
+          //   type: "cluster",
+          //   popupEnabled: true,
+          //   popupTemplate: {
+          //     outFields: ["Paramete_1", "Paramete_2", "Paramete_3", "MonsterC_1"],
+          //     content: [
+          //       {
+          //       type: "text",
+          //       outFields: ["Paramete_2", "Paramete_3", "MonsterC_1"],
+          //       text: "{Paramete_2} - {Paramete_1}"
+          //     }, 
           //     {
           //       type: "fields",
-          //       fieldInfos: [
-          //         {
-          //           fieldName: "Paramete_3",
-          //           label: "Chemical Bond"
-          //         },
-          //         {
-          //           fieldName: "MonsterC_1",
-          //           label: "Measurement taken from"
-          //         },
-          //         {
-          //           fieldName: "Resultaatd",
-          //           label: "Result Date"
-          //         },
-          //         {
-          //           fieldName: "Numeriekew",
-          //           label: "Value"
+          //       outFields: ["Paramete_3", "MonsterC_1", "Resultaatd", "Numeriekew"],
+          //       fieldInfos: [{
+          //         fieldName: "Paramete_3",
+          //         label: "Chemical Bond",
+          //         format: {
+          //           places: 0
           //         }
-          //       ]
-          //     }
-          //   ]
-          // },
-          featureReduction: {
-            type: "cluster",
-            popupEnabled: true,
-            popupTemplate: {
-              content: [
-              //   {
-              //   type: "text",
-              //   //text: "This cluster represents <b>{Paramete_3}</b> weather stations."
-              // }, 
-              {
-                type: "fields",
-                fieldInfos: [{
-                  fieldName: "Paramete_3",
-                  label: "Chemical Bond",
-                  format: {
-                    places: 0
-                  }
-                }, {
-                  fieldName: "MonsterC_1",
-                  label: "Measurement taken from",
-                  format: {
-                    places: 0
-                  }
-                }, {
-                  fieldName: "Resultaatd",
-                  label: "Result Date",
-                  format: {
-                    places: 0
-                  }
-                },{
-                  fieldName: "Numeriekew",
-                  label: "Value",
-                  format: {
-                    places: 0
-                  }
-                }]
-              }]
-            }
-          },
-          // renderer: {
-          //   authoringInfo: {
-          //     visualVariables: [{
-          //       type: "color",
-          //       field: "Paramete_3",
-          //     },
-          //     {
-          //       type: "size",
-          //       field: "Numeriekew",
+          //       }, {
+          //         fieldName: "MonsterC_1",
+          //         label: "Measurement taken from",
+          //         format: {
+          //           places: 0
+          //         }
+          //       }, {
+          //         fieldName: "Resultaatd",
+          //         label: "Result Date",
+          //         format: {
+          //           places: 0
+          //         }
+          //       },{
+          //         fieldName: "Numeriekew",
+          //         label: "Value",
+          //         format: {
+          //           places: 0
+          //         }
+          //       }]
           //     }]
-          //   }
-          // }
+          //   },
+          //   // //working Code
+          //   // clusterRadius: "100px",
+          //   // clusterMinSize: "24px",
+          //   // clusterMaxSize: "60px",
+          //   // labelingInfo: [{
+          //   //   deconflictionStrategy: "none",
+          //   //   labelExpressionInfo: {
+          //   //     expression: "Text($feature.cluster_count, '#,###')"
+          //   //   },
+          //   //   symbol: {
+          //   //     type: "text",
+          //   //     color: "#004a5d",
+          //   //     font: {
+          //   //       weight: "bold",
+          //   //       family: "Noto Sans",
+          //   //       size: "12px"
+          //   //     }
+          //   //   },
+          //   //   labelPlacement: "center-center",
+          //   // }]
+          // },
+          renderer: rederer1
         });
-        
         this.map.layers.add(this.checmicalLayer, MapLayerType.Chemicals);
         this.LayerInfo.push({layer: this.checmicalLayer, title: "Chemicals Measurement"});
         break;
@@ -419,8 +512,10 @@ export class AppComponent implements OnInit {
         });
         this.protectedAreaLayer = new FeatureLayer({
           url: "https://services3.arcgis.com/jNF04dtssnue8VcP/arcgis/rest/services/protected_areas/FeatureServer/0",
-          renderer: renderer,
-          opacity: 20
+          //renderer: renderer,
+          geometryType: "polygon",
+          opacity: 20,
+          //color: ""
         });
         this.map.layers.add(this.protectedAreaLayer, MapLayerType.ProtectedAreas);
         this.LayerInfo.push({layer: this.protectedAreaLayer, title: "Protected Areas"});

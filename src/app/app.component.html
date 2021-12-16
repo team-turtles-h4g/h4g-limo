@@ -19,6 +19,10 @@
 </div>
 <div id="mapViewDiv" class="selectChemical">
 <label class="FilterLabel">Filter by Map View:</label> 
+<!-- <calcite-select id="mapViewFilter">
+  <calcite-option *ngFor="let view of mapViewList" [value]="view.value">{{view.viewValue}}</calcite-option>
+</calcite-select> -->
+
 <select id="mapViewFilter">
     <option *ngFor="let view of mapViewList" [value]="view.value">{{view.viewValue}}</option>
 </select>
