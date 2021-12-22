@@ -1,49 +1,52 @@
 <div class="app-header div-flex-full-center">
-    <div class="kpi-container">
-        Water quality {{waterquality}}%
-    </div>
-    <div class="kpi-container">
-        Plant growth over one year - {{plantgrowth}}%
-    </div>
-    <div class="kpi-container">
-        Probable origin point {{originpoint}}
-    </div>
+  <div class="kpi-container">
+    Water quality {{waterquality}}%
+  </div>
+  <div class="kpi-container">
+    Plant growth over one year - {{plantgrowth}}%
+  </div>
+  <div class="kpi-container">
+    Probable origin point {{originpoint}}
+  </div>
 </div>
 <div id="viewDiv"></div>
 <div id="infoDiv" class="selectChemical">
-    <label class="FilterLabel">Filter by chemicals:</label>
-    <select id="chemicalFilter">
-        <option value="">All</option>
-        <option *ngFor="let chemical of chemicalList" [value]="chemical.value">{{chemical.viewValue}}</option>
-    </select>
+  <label class="FilterLabel">Filter by chemicals:</label>
+  <select id="chemicalFilter">
+    <option value="">All</option>
+    <option *ngFor="let chemical of chemicalList" [value]="chemical.value">{{chemical.viewValue}}</option>
+  </select>
 </div>
 <div id="mapViewDiv" class="selectChemical">
-    <label class="FilterLabel">Filter by Map View:</label>
-    <!-- <calcite-select id="mapViewFilter">
+  <label class="FilterLabel">Filter by Map View:</label>
+  <!-- <calcite-select id="mapViewFilter">
     <calcite-option *ngFor="let view of mapViewList" [value]="view.value">{{view.viewValue}}</calcite-option>
   </calcite-select> -->
 
-    <select id="mapViewFilter">
-        <option *ngFor="let view of mapViewList" [value]="view.value">{{view.viewValue}}</option>
-    </select>
+  <select id="mapViewFilter">
+    <option *ngFor="let view of mapViewList" [value]="view.value">{{view.viewValue}}</option>
+  </select>
 </div>
 
 <div id="timeSliderDiv">
 </div>
 
 <div id="legendsDiv">
-    <div *ngFor="let Legends of LegendsData">
-        <div class="LegendsCls">
-            <label class="container">
-                {{ Legends.name }}
-                <input type="checkbox" [checked]="Legends.isChecked" (click)="onChange($event, Legends.id)" />
-                <span class="checkmark"></span>
-            </label>
-        </div>
+  <div *ngFor="let Legends of LegendsData">
+    <div class="LegendsCls">
+      <label class="container">
+        {{ Legends.name }}
+        <input type="checkbox" [checked]="Legends.isChecked" (click)="onChange($event, Legends.id)" />
+        <span class="checkmark"></span>
+      </label>
     </div>
+  </div>
 </div>
 
-<img class="limo-green-logo" src="https://raw.githubusercontent.com/team-turtles-h4g/h4g-limo/main/limo-icon.png">
+<div class="upload-area" (click)="openUploadDataView()">
+  <img class="limo-green-logo" src="https://raw.githubusercontent.com/team-turtles-h4g/h4g-limo/main/limo-icon.png"
+    matTooltip="Upload file from here" matTooltipPosition="above">
+</div>
 <!-- <div id="infoDiv" class="esri-widget">
   <h4 id="titleText" class="esri-widget__heading esri-editor__title">
     Water Pollutants - Netherlands
@@ -82,9 +85,9 @@
   </div>
   </div> -->
 <div class="info-panel-bottom" *ngIf="this.showLandingBanner" [@inOutAnimation]>
-    <h1 class="app-title">Welcome to Limo - Grow More Grow Smart</h1>
-    <p class="app-subtitle">
-        Limo gives seamless, intuitive access to high quality academic data.
-        Become a part of the Limo community, learn from the best, produce more, produce better, produce sustainable.
-    </p>
+  <h1 class="app-title">Welcome to Limo - Grow More Grow Smart</h1>
+  <p class="app-subtitle">
+    Limo gives seamless, intuitive access to high quality academic data.
+    Become a part of the Limo community, learn from the best, produce more, produce better, produce sustainable.
+  </p>
 </div>

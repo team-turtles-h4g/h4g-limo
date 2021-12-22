@@ -1,0 +1,104 @@
+.signup-login-form {
+    //position: fixed;
+    right: 24px;
+    top: 10vh;
+    padding: 32px;
+    border-radius: var(--border-radius);
+    border: 1px solid black;
+    box-shadow: var(--basic-box-shadow);
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background: rgba(255, 255, 255, 1);
+    /* transition: 0.3s; */
+}
+
+.login-title {
+    color: var(--logo-brown);
+    text-align: center;
+    font-size: 16px;
+}
+
+.login-input {
+    color: black;
+}
+
+.limo-logo {
+    height: 80px;
+    width: auto;
+}
+
+.change-to-login {
+    margin-top: 16px;
+}
+
+.login-button-container {
+    margin-top: 16px;
+}
+
+.forgot-password-link {
+    margin-top: 16px;
+}
+
+.login-info-text {
+    font-size: 12px;
+    margin: 8px;
+}
+
+.sign-up-button {
+    margin-top: 16px;
+}
+
+.slide-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: black;
+}
+.slide-title-container {
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    z-index: 1;
+    max-width: 50vw;
+}
+.slide-title {
+    line-height: normal;
+    font-weight: bold;
+    color: white;
+    font-size: 48px;
+    text-shadow: 2px 2px black;
+}
+.slide-subtitle {
+    line-height: normal;
+    color: white;
+    font-size: 16px;
+    padding-top: 24px;
+}
+
+.slide-hero-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+}
+
+.width-33 {
+    width: 33.33%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.uploadbtn {
+    margin: 10px;
+}
+
+.w-70 {
+    width: 79.3% !important;
+}

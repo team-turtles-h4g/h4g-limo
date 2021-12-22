@@ -1,0 +1,23 @@
+<app-full-loader></app-full-loader>
+<div class="">
+    <div class="div-flex-full-center">
+        <button mat-button>
+            <img class="limo-logo" src="../../../assets/limo-icon.png">
+        </button>
+    </div>
+    <h2 class="login-title">
+        Upload various format files
+    </h2>
+    <div>
+        <form name="uploadDataForm" #uploadDataForm="ngForm" autocomplete="off">
+            <mat-form-field class="w-70 mr-10" color="accent">
+                <ngx-mat-file-input name="gaPlanFileInput" [(ngModel)]="uploadDataInput" #uploadDataFileInput="ngModel"
+                    placeholder="Choose file" (change)="onFileChange($event)" [accept]="'.xlsx,.xls,.csv'">
+                </ngx-mat-file-input>
+                <mat-icon matSuffix>attach_file</mat-icon>
+                <mat-hint>**Excel, CSV allowed up to 100MB.</mat-hint>
+            </mat-form-field>
+            <button class="uploadbtn" color="accent" type="submit" mat-raised-button (click)="uploadFile()">Upload</button>
+        </form>
+    </div>
+</div>

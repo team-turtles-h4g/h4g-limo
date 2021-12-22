@@ -28,6 +28,8 @@ import PopupTemplateProperties from "@arcgis/core/PopupTemplate";
 import PictureMarkerSymbol from "@arcgis/core/symbols/PictureMarkerSymbol";
 import { FullLoaderService } from 'src/app/services/full-loader.service';
 import DotDensityRenderer from "@arcgis/core/renderers/DotDensityRenderer";
+import { MatDialog } from '@angular/material/dialog';
+import { UploadDataComponent } from '../upload-data/upload-data.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -97,7 +99,8 @@ export class DashboardComponent implements OnInit {
   //#endregion
 
   constructor(private http: HttpClient,
-    private fullLoaderService: FullLoaderService) {
+    private fullLoaderService: FullLoaderService,
+    public dialog: MatDialog) {
     this.http.get("./assets/chemicals.json").subscribe((_chemList: any) => {
       this.chemicalList = _chemList;
     });
@@ -186,6 +189,7 @@ export class DashboardComponent implements OnInit {
           });
 
         });
+
         //#endregion
         this.timeSlider.watch("timeExtent", () => {
           this.startTimeExtent = moment(this.timeSlider.timeExtent.start).format("MM/DD/YYYY hh:mm A");
@@ -218,7 +222,6 @@ export class DashboardComponent implements OnInit {
       }
     }, 300);
   }
-
 
   changeMapView() {
     this.view = new MapView({
@@ -321,6 +324,10 @@ export class DashboardComponent implements OnInit {
     let definitionExpression = chemicalDefExpression
       ? `${chemicalDefExpression} AND ${dateDefExpression}` : dateDefExpression;
     this.checmicalLayer.definitionExpression = definitionExpression;
+
+    if (this.OthertoxicLayer) {
+      this.OthertoxicLayer.definitionExpression = dateDefExpression;
+    }
     // (<any>this.map).infoWindow.hide();
   }
 
@@ -336,9 +343,35 @@ export class DashboardComponent implements OnInit {
       //this.map.layers.add(this.GetLayer(id), id);
       this.GetLayer(id);
     } else {
-      this.map.layers.removeAt(id);
+      // this.map.layers.removeAt(id);
+      this.disableLayer(id);
     }
     this.view.ui.add(this.legend, "bottom-left");
+  }
+
+  disableLayer(_layerId: number) {
+    switch (_layerId) {
+      case MapLayerType.Chemicals:
+        this.map.layers.remove(this.checmicalLayer);
+        break;
+      case MapLayerType.ProtectedAreas:
+        this.map.layers.remove(this.protectedAreaLayer);
+        break;
+      case MapLayerType.Municipalities:
+        this.map.layers.remove(this.municipalityLayer);
+        break;
+      case MapLayerType.GreenHouses:
+        this.map.layers.remove(this.greenHouseLayer);
+        break;
+      case MapLayerType.Biodiversity:
+        this.map.layers.remove(this.BiodiversityLayer);
+        break;
+      case MapLayerType.OtherToxic:
+        this.map.layers.remove(this.OthertoxicLayer);
+        break;
+      default:
+        break;
+    }
   }
 
   GetLayer(EnumMapLayerType: MapLayerType): FeatureLayer {
@@ -557,15 +590,13 @@ export class DashboardComponent implements OnInit {
         };
         const Brenderer = new SimpleRenderer({
           symbol: new SimpleMarkerSymbol({
-            //path: "M14.5,29 23.5,0 14.5,9 5.5,0z",
-            color: "rgba(50,50,50,0.15)",
+            color: "#9a9a9a",
             outline: {
-              color: "rgba(50,50,50,0.25)",
+              color: "#242424",
               width: 2
             },
-            //angle: 180,
             size: 9,
-          }),          
+          }),
           //visualVariables: [BcolorVisVar]
         });
 
@@ -593,7 +624,6 @@ export class DashboardComponent implements OnInit {
           fields: ["methodname"],
           outFields: ["methodcode", "methodname", "attributecode", "attributename", "attribute_value"],
           popupTemplate: {
-            //outFields: ["methodcode", "methodname", "attributecode", "attributename", "attribute_value"],
             content: [
               {
                 type: "fields",
@@ -636,9 +666,8 @@ export class DashboardComponent implements OnInit {
         this.LayerInfo.push({ layer: this.BiodiversityLayer, title: "Bio diversity" });
         break;
       case MapLayerType.OtherToxic:
-
         const Orenderer = new SimpleRenderer({
-          symbol: new PictureMarkerSymbol ({
+          symbol: new PictureMarkerSymbol({
             url: "https://i.ibb.co/JzQj0LQ/toxin.png",// "https://static.arcgis.com/images/Symbols/Shapes/BlackStarLargeB.png",
             width: "20px",
             height: "20px"
@@ -681,6 +710,17 @@ export class DashboardComponent implements OnInit {
     this.waterquality = Math.floor(Math.random() * 100);
     this.plantgrowth = Math.floor(Math.random() * 100);
     //this.originpoint = Math.floor(Math.random() * 100);
+  }
+
+  openUploadDataView() {
+    const dialogRef = this.dialog.open(UploadDataComponent, {
+      width: 'calc(30vw - 24px)',
+      data: {},
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      // Dialog closed event
+    });
   }
 
 }
