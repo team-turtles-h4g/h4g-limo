@@ -25,6 +25,7 @@ import { Legends } from 'src/app/constants/interfaces';
 import ColorVariable from "@arcgis/core/renderers/visualVariables/ColorVariable";
 import SizeVariable from "@arcgis/core/renderers/visualVariables/SizeVariable";
 import PopupTemplateProperties from "@arcgis/core/PopupTemplate";
+import { FullLoaderService } from 'src/app/services/full-loader.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -89,13 +90,15 @@ export class DashboardComponent implements OnInit {
 
   //#endregion
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+    private fullLoaderService: FullLoaderService) {
     this.http.get("./assets/chemicals.json").subscribe((_chemList: any) => {
       this.chemicalList = _chemList;
     });
     this.http.get("./assets/MapView.json").subscribe((_MapViewList: any) => {
       this.mapViewList = _MapViewList;
-    })
+    });
+    fullLoaderService.showLoader();
   }
 
   ngOnInit(): void {
@@ -156,7 +159,7 @@ export class DashboardComponent implements OnInit {
         this.timeSlider = new TimeSlider({
           container: "timeSliderDiv",
           mode: "time-window",
-          timeVisible: true,
+          timeVisible: false,
           loop: true
         });
 
@@ -175,6 +178,8 @@ export class DashboardComponent implements OnInit {
             start: '01/01/2020',
             end: "01/01/2021"
           });
+
+          this.fullLoaderService.hideLoader();
         });
         //#endregion
         this.timeSlider.watch("timeExtent", () => {
@@ -188,7 +193,6 @@ export class DashboardComponent implements OnInit {
           index: 3
         });
         //#endregion
-
         //#region Heatmap
         // let heatmapParams: any = {
         //   layer: layer,
@@ -276,6 +280,13 @@ export class DashboardComponent implements OnInit {
     });
     this.legend = legend;
     this.view.ui.add(legend, "bottom-left");
+
+    this.view.on("layerview-create", (evt) => {
+      console.log("layer load title", evt.layer.title);
+      console.log("layer load evt", evt.layer.loadStatus);
+      if(evt.layer.title == "Measure locations shortv 0" && evt.layer.loadStatus == "loaded") {
+      }
+    })
     //#endregion
   }
 
@@ -319,8 +330,8 @@ export class DashboardComponent implements OnInit {
       case MapLayerType.Chemicals:
         const colorVisVar = {
           type: "color",
-          field: "MonsterC_1",
-          //normalizationField: "SQ_KM",
+          field: "Paramete_3",
+          //normalizationField: "Paramete_3",
           stops: [
             { value: 7, color: "#2b83ba" },
             { value: 600, color: "#abdda4" },
@@ -329,14 +340,14 @@ export class DashboardComponent implements OnInit {
             { value: 2400, color: "#d7191c" }
           ],
           legendOptions: {
-            title: "Population per square kilometer"
+            title: "Chemicals"
           }
         };
 
         const sizeVisualVariable = {
           type: "size",
-          field: "Paramete_3",
-          minDataValue: 0,
+          field: "Numeriekew",
+          minDataValue: 1,
           maxDataValue: 2400,
           minSize: 8,
           maxSize: 40
@@ -354,22 +365,22 @@ export class DashboardComponent implements OnInit {
 
         const rotationVisualVariable = {
           type: "rotation",
-          field: "Paramete_1",
+          field: "Numeriekew",
           rotationType: "geographic"
         };
 
         const rederer1 = new SimpleRenderer({
           symbol: new SimpleMarkerSymbol({
-            path: "M14.5,29 23.5,0 14.5,9 5.5,0z",
-            color: [50, 50, 50],
+            //path: "M14.5,29 23.5,0 14.5,9 5.5,0z",
+            color: "#FFAF5E",
             outline: {
-              color: [0, 0, 0, 0.7],
-              width: 0.5
+              color: "#EB771F",
+              width: 2
             },
-            angle: 180,
-            size: 15
+            //angle: 180,
+            size: 9,
           }),
-          visualVariables: [sizeVisualVariable, colorVisVar, rotationVisualVariable]
+          visualVariables: [sizeVisualVariable, rotationVisualVariable]
         });
 
         // const rederer = new SimpleRenderer({
