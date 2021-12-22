@@ -668,7 +668,7 @@ export class DashboardComponent implements OnInit {
       case MapLayerType.OtherToxic:
         const Orenderer = new SimpleRenderer({
           symbol: new PictureMarkerSymbol({
-            url: "https://i.ibb.co/JzQj0LQ/toxin.png",// "https://static.arcgis.com/images/Symbols/Shapes/BlackStarLargeB.png",
+            url: "https://raw.githubusercontent.com/team-turtles-h4g/h4g-limo/main/toxin.png",// "https://static.arcgis.com/images/Symbols/Shapes/BlackStarLargeB.png",
             width: "20px",
             height: "20px"
           })
