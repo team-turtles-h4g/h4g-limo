@@ -118,7 +118,7 @@ export class DashboardComponent implements OnInit {
         this.mapDiv = _mapDiv;
 
         this.map = new Map({
-          basemap: "arcgis-community" // Basemap layer service
+          basemap: "arcgis-light-gray" // Basemap layer service
         });
 
         // this.map.on("load", function() {
@@ -179,7 +179,6 @@ export class DashboardComponent implements OnInit {
             end: "01/01/2021"
           });
 
-          this.fullLoaderService.hideLoader();
         });
         //#endregion
         this.timeSlider.watch("timeExtent", () => {
@@ -281,10 +280,14 @@ export class DashboardComponent implements OnInit {
     this.legend = legend;
     this.view.ui.add(legend, "bottom-left");
 
+    let layerLoadedFlag = 0;
     this.view.on("layerview-create", (evt) => {
-      console.log("layer load title", evt.layer.title);
-      console.log("layer load evt", evt.layer.loadStatus);
-      if(evt.layer.title == "Measure locations shortv 0" && evt.layer.loadStatus == "loaded") {
+      if (evt.layer.loadStatus == "loaded") {
+        layerLoadedFlag++;
+      }
+
+      if (layerLoadedFlag > this.map.layers.length + 1) {
+        this.fullLoaderService.hideLoader();
       }
     })
     //#endregion
@@ -541,7 +544,10 @@ export class DashboardComponent implements OnInit {
       case MapLayerType.GreenHouses:
         const Grenderer = new SimpleRenderer({
           symbol: new SimpleFillSymbol({
-            color: "#81C784"
+            color: "#81C784",
+            outline: {
+              width: 1.5
+            }
           })
         });
 
@@ -549,6 +555,34 @@ export class DashboardComponent implements OnInit {
           url: "https://services3.arcgis.com/jNF04dtssnue8VcP/arcgis/rest/services/greenhouses_data/FeatureServer/0",
           renderer: Grenderer,
           geometryType: "polygon",
+          popupTemplate: {
+            outFields: ["gml_id", "bronactual", "opp_m2", "warmte_GJ"],
+            content: [
+              {
+                type: "fields",
+                outFields: ["gml_id", "bronactual", "opp_m2", "warmte_GJ"],
+                fieldInfos: [{
+                  fieldName: "gml_id",
+                  label: "GML ID",
+                  format: {
+                    places: 0
+                  }
+                }, {
+                  fieldName: "bronactual",
+                  label: "Date",
+                  format: {
+                    places: 0
+                  }
+                }, {
+                  fieldName: "",
+                  label: "Chemicals",
+                  format: {
+                    places: 0
+                  }
+                }
+                ]
+              }]
+          },
         });
         this.map.layers.add(this.greenHouseLayer, MapLayerType.GreenHouses);
         this.LayerInfo.push({ layer: this.greenHouseLayer, title: "Green Houses" });
