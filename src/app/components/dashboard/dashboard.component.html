@@ -36,7 +36,7 @@
         <div class="LegendsCls">
             <label class="container">
                 {{ Legends.name }}
-                <input type="checkbox" checked (click)="onChange($event, Legends.id)" />
+                <input type="checkbox" [checked]="Legends.isChecked" (click)="onChange($event, Legends.id)" />
                 <span class="checkmark"></span>
             </label>
         </div>

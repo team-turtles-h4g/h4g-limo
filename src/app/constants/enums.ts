@@ -2,5 +2,7 @@ export enum MapLayerType {
     Chemicals,
     ProtectedAreas,
     Municipalities,
-    GreenHouses
+    GreenHouses,
+    Biodiversity,
+    OtherToxic
 }

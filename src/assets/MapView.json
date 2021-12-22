@@ -1,5 +1,9 @@
 [
     {
+        "viewValue": "Light Gray",
+        "value": "arcgis-light-gray"
+    },
+    {
         "viewValue": "Community Map",
         "value": "arcgis-community"
     },
@@ -15,10 +19,7 @@
         "viewValue": "Imagery Label",
         "value": "arcgis-imagery-labels"
     },
-    {
-        "viewValue": "Light Gray",
-        "value": "arcgis-light-gray"
-    },
+    
     {
         "viewValue": "Dark Gray",
         "value": "arcgis-dark-gray"
@@ -83,7 +84,6 @@
         "viewValue": "Charted Territory Map",
         "value": "arcgis-charted-territory"
     },
-
     {
         "viewValue": "Colored Pencil Map",
         "value": "arcgis-colored-pencil"

@@ -25,7 +25,9 @@ import { Legends } from 'src/app/constants/interfaces';
 import ColorVariable from "@arcgis/core/renderers/visualVariables/ColorVariable";
 import SizeVariable from "@arcgis/core/renderers/visualVariables/SizeVariable";
 import PopupTemplateProperties from "@arcgis/core/PopupTemplate";
+import PictureMarkerSymbol from "@arcgis/core/symbols/PictureMarkerSymbol";
 import { FullLoaderService } from 'src/app/services/full-loader.service';
+import DotDensityRenderer from "@arcgis/core/renderers/DotDensityRenderer";
 
 @Component({
   selector: 'app-dashboard',
@@ -62,13 +64,17 @@ export class DashboardComponent implements OnInit {
   protectedAreaLayer: FeatureLayer;
   municipalityLayer: FeatureLayer;
   greenHouseLayer: FeatureLayer;
+  BiodiversityLayer: FeatureLayer;
+  OthertoxicLayer: FeatureLayer;
   showLandingBanner: boolean = true;
 
   LegendsData: Legends[] = [
     { id: 0, name: 'Chemicals', isChecked: true },
     { id: 1, name: 'Protected Areas', isChecked: true },
     { id: 2, name: 'Municipalities', isChecked: true },
-    { id: 3, name: 'Green Houses', isChecked: true }
+    { id: 3, name: 'Green Houses', isChecked: true },
+    { id: 4, name: 'Bio diversity', isChecked: true },
+    { id: 5, name: 'Other Toxic', isChecked: false }
   ];
   LayerInfo = [];
   waterquality: number;
@@ -272,6 +278,14 @@ export class DashboardComponent implements OnInit {
     this.GetLayer(MapLayerType.GreenHouses);
     //#endregion
 
+    //#region Bio diversity Layer
+    this.GetLayer(MapLayerType.Biodiversity);
+    //#endregion
+
+    // //#region Other Toxic Layer
+    // this.GetLayer(MapLayerType.OtherToxic);
+    // //#endregion
+
     //#region Add Legends
     const legend = new Legend({
       view: this.view,
@@ -399,7 +413,7 @@ export class DashboardComponent implements OnInit {
         // });
 
         this.checmicalLayer = new FeatureLayer({
-          url: "https://services3.arcgis.com/jNF04dtssnue8VcP/arcgis/rest/services/measure_locations_shortv/FeatureServer/0",
+          url: "https://services3.arcgis.com/jNF04dtssnue8VcP/arcgis/rest/services/chemicals_gp/FeatureServer/0",
           outFields: ["MonsterC_1", "Paramete_1", "Paramete_2", "Paramete_3"],
           popupTemplate: {
             outFields: ["Paramete_1", "Paramete_2", "Paramete_3", "MonsterC_1"],
@@ -439,69 +453,6 @@ export class DashboardComponent implements OnInit {
                 }]
               }]
           },
-          // //popupEnabled: true,
-          // featureReduction: {
-          //   type: "cluster",
-          //   popupEnabled: true,
-          //   popupTemplate: {
-          //     outFields: ["Paramete_1", "Paramete_2", "Paramete_3", "MonsterC_1"],
-          //     content: [
-          //       {
-          //       type: "text",
-          //       outFields: ["Paramete_2", "Paramete_3", "MonsterC_1"],
-          //       text: "{Paramete_2} - {Paramete_1}"
-          //     }, 
-          //     {
-          //       type: "fields",
-          //       outFields: ["Paramete_3", "MonsterC_1", "Resultaatd", "Numeriekew"],
-          //       fieldInfos: [{
-          //         fieldName: "Paramete_3",
-          //         label: "Chemical Bond",
-          //         format: {
-          //           places: 0
-          //         }
-          //       }, {
-          //         fieldName: "MonsterC_1",
-          //         label: "Measurement taken from",
-          //         format: {
-          //           places: 0
-          //         }
-          //       }, {
-          //         fieldName: "Resultaatd",
-          //         label: "Result Date",
-          //         format: {
-          //           places: 0
-          //         }
-          //       },{
-          //         fieldName: "Numeriekew",
-          //         label: "Value",
-          //         format: {
-          //           places: 0
-          //         }
-          //       }]
-          //     }]
-          //   },
-          //   // //working Code
-          //   // clusterRadius: "100px",
-          //   // clusterMinSize: "24px",
-          //   // clusterMaxSize: "60px",
-          //   // labelingInfo: [{
-          //   //   deconflictionStrategy: "none",
-          //   //   labelExpressionInfo: {
-          //   //     expression: "Text($feature.cluster_count, '#,###')"
-          //   //   },
-          //   //   symbol: {
-          //   //     type: "text",
-          //   //     color: "#004a5d",
-          //   //     font: {
-          //   //       weight: "bold",
-          //   //       family: "Noto Sans",
-          //   //       size: "12px"
-          //   //     }
-          //   //   },
-          //   //   labelPlacement: "center-center",
-          //   // }]
-          // },
           renderer: rederer1
         });
         this.map.layers.add(this.checmicalLayer, MapLayerType.Chemicals);
@@ -586,6 +537,141 @@ export class DashboardComponent implements OnInit {
         });
         this.map.layers.add(this.greenHouseLayer, MapLayerType.GreenHouses);
         this.LayerInfo.push({ layer: this.greenHouseLayer, title: "Green Houses" });
+        break;
+      case MapLayerType.Biodiversity:
+        const BcolorVisVar = {
+          type: "color",
+          field: "methodname",
+          // legendOptions: {
+          //   showLegend: true
+          // },
+          // stops: [
+          //   { label: "Vegetatiebedekking vlakdekkende opnamen", color: "#2b83ba" },
+          //   { label: "Vegetatiebedekking tov water", color: "#abdda4" },
+          //   { label: "Vis aantallen", color: "#ffffbf" },
+          //   { label: "Vegetatie met STOWAklassen", color: "#fdae61" },
+          //   { label: "Dummy methode tbv KRW", color: "#d7191c" },
+          //   { label: "Macrofauna quickscan", color: "#d7191c" },
+          //   { label: "Macrofauna", color: "#d7191c" }
+          // ],
+        };
+        const Brenderer = new SimpleRenderer({
+          symbol: new SimpleMarkerSymbol({
+            //path: "M14.5,29 23.5,0 14.5,9 5.5,0z",
+            color: "rgba(50,50,50,0.15)",
+            outline: {
+              color: "rgba(50,50,50,0.25)",
+              width: 2
+            },
+            //angle: 180,
+            size: 9,
+          }),          
+          //visualVariables: [BcolorVisVar]
+        });
+
+        const red = new DotDensityRenderer({
+          dotValue: 1000,  // 1 dot = 1,000 people when the view.scale is 1:1,000,000
+          referenceScale: 1000000,  // view.scale
+          attributes: [{
+            field: "methodname",
+            label: "Vegetatiebedekking vlakdekkende opnamen",
+            color: "red"
+          }, {
+            field: "methodname",
+            label: "Vegetatiebedekking tov water",
+            color: "blue"
+          }, {
+            field: "methodname",
+            label: "Macrofauna",
+            color: "orange"
+          }]
+        })
+
+        this.BiodiversityLayer = new FeatureLayer({
+          url: "https://services3.arcgis.com/jNF04dtssnue8VcP/arcgis/rest/services/biodiversity_gp/FeatureServer/0",
+          renderer: Brenderer,
+          fields: ["methodname"],
+          outFields: ["methodcode", "methodname", "attributecode", "attributename", "attribute_value"],
+          popupTemplate: {
+            //outFields: ["methodcode", "methodname", "attributecode", "attributename", "attribute_value"],
+            content: [
+              {
+                type: "fields",
+                outFields: ["methodcode", "methodname", "attributecode", "attributename", "attribute_value"],
+                fieldInfos: [{
+                  fieldName: "methodcode",
+                  label: "Method Code",
+                  format: {
+                    places: 0
+                  }
+                }, {
+                  fieldName: "methodname",
+                  label: "Method Name",
+                  format: {
+                    places: 0
+                  }
+                }, {
+                  fieldName: "attributecode",
+                  label: "Attribute Code",
+                  format: {
+                    places: 0
+                  }
+                }, {
+                  fieldName: "attributename",
+                  label: "Attribute Name",
+                  format: {
+                    places: 0
+                  }
+                }, {
+                  fieldName: "attribute_value",
+                  label: "Attribute Value",
+                  format: {
+                    places: 0
+                  }
+                }]
+              }]
+          },
+        });
+        this.map.layers.add(this.BiodiversityLayer, MapLayerType.GreenHouses);
+        this.LayerInfo.push({ layer: this.BiodiversityLayer, title: "Bio diversity" });
+        break;
+      case MapLayerType.OtherToxic:
+
+        const Orenderer = new SimpleRenderer({
+          symbol: new PictureMarkerSymbol ({
+            url: "https://i.ibb.co/JzQj0LQ/toxin.png",// "https://static.arcgis.com/images/Symbols/Shapes/BlackStarLargeB.png",
+            width: "20px",
+            height: "20px"
+          })
+        });
+
+        this.OthertoxicLayer = new FeatureLayer({
+          url: "https://services3.arcgis.com/jNF04dtssnue8VcP/arcgis/rest/services/other_toxins/FeatureServer/0",
+          outFields: ["Biotaxon_n", "Numeriekew"],
+          popupTemplate: {
+            content: [
+              {
+                type: "fields",
+                outFields: ["Biotaxon_n", "Numeriekew"],
+                fieldInfos: [{
+                  fieldName: "Biotaxon_n",
+                  label: "Biotaxon_n",
+                  format: {
+                    places: 0
+                  }
+                }, {
+                  fieldName: "Numeriekew",
+                  label: "Numeriekew",
+                  format: {
+                    places: 0
+                  }
+                }]
+              }]
+          },
+          renderer: Orenderer
+        });
+        this.map.layers.add(this.OthertoxicLayer, MapLayerType.OtherToxic);
+        this.LayerInfo.push({ layer: this.OthertoxicLayer, title: "Other Toxic" });
         break;
     }
     return retlayer;
