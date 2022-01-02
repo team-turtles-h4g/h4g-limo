@@ -26,5 +26,12 @@ export const users = [
         lastName: "Akbari",
         email: "nirali@limo.com",
         password: "nirali@123"
+    },
+    {
+        id: 1,
+        firstName: "Greenport",
+        lastName: "User",
+        email: "sample@greenportwestholland.nl",
+        password: "green@2021"
     }
 ]
